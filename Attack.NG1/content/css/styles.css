@@ -1,0 +1,88 @@
+
+.mobile-frame {
+    margin: 10px auto;
+    width: 450px;
+    height: 720px;
+    overflow-y: auto;
+    border: solid 1px #333;
+    border-radius: 3px;
+    padding:15px;
+}
+
+.nomargin{
+    margin:0;
+    padding:0;
+}
+
+
+
+
+.center-block-200 {
+    margin: auto;
+    width: 200px;
+}
+
+.center-block-240 {
+    margin: auto;
+    width: 240px;
+}
+
+.center-block-300 {
+    margin: auto;
+    width: 300px;
+}
+
+.center-block-350 {
+    margin: auto;
+    width: 350px;
+}
+
+
+
+.margin-top-50 {
+    margin-top: 50px;
+}
+
+
+
+.logo {
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+.btn-group-vertical {
+    display: block;
+}
+
+
+
+.avatar-view {
+    width: 240px;
+    margin: auto;
+}
+
+
+
+
+.melee-list-item{
+    padding-bottom:10px;
+    border-bottom:solid 1px #ccc;
+}
+
+
+.attack-buttons a{
+    font-size:.8em;
+}
+
+/*COLORS
+-----------------------------------------*/
+
+.Black{ background:#000; color:#fff;}
+.Gold{ background:#5a4018; color:#000;}
+.White{ background:#fff; color:#000;}
+.Blue{ background:#0023cb; color:#fff;}
+.Green{ background:#053e02; color:#fff;}
+.Red{ background:#ff0000; color:#000;}
+.Orange{ background:#e95f19; color:#000;}
+.Yellow{ background:#edc011; color:#000;}

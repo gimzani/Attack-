@@ -1,0 +1,22 @@
+﻿[
+  {
+    "ID": 1,
+    "Book_ID": 1,
+    "Type": "Skeleton",
+    "Pic": "Skeleton.png",
+    "Height": 8,
+    "Description": "",
+    "HP": 12,
+    "Actions": null
+  },
+  {
+    "ID": 2,
+    "Book_ID": 2,
+    "Type": "Man in Chain",
+    "Pic": "ManInChain.png",
+    "Height": 8,
+    "Description": "",
+    "HP": 12,
+    "Actions": null
+  }
+]

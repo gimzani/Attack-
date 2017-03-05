@@ -1,0 +1,52 @@
+﻿<form name="inputForm" ng-submit="selectAvatar(inputForm)" novalidate>
+
+    <div class="panel panel-default">
+        <div class="panel-heading text-center">
+            <h3 class="nomargin">{{selectedAvatar.Type}}</h3>
+        </div>
+        <div class="panel-body">
+            <div class="avatar-view">
+                <img src="content/img/{{selectedAvatar.Pic}}" />
+            </div>
+            <div class="avatar-stats">
+                <div class="row">
+                    <div class="col-xs-6 text-right">
+                        HP:{{selectedAvatar.HP}}
+                    </div>
+                    <div class="col-xs-6 text-left">
+                        Height:{{selectedAvatar.Height}}
+                    </div>
+                </div>
+            </div>
+            <div class="center-block-240" style="margin-top:10px;margin-bottom:20px;">
+                <div class="row">
+                    <div class="col-xs-6 text-left">
+                        <a class="btn btn-default" ng-click="cycleAvatar(-1)">
+                            <i class="fa fa-chevron-left"></i> Prev
+                        </a>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <a class="btn btn-default" ng-click="cycleAvatar(1)">
+                            Next <i class="fa fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error':inputForm.avatarName.$invalid && inputForm.$submitted}">
+                <label>Avatar Name:</label>
+                <input name="avatarName" type="text" class="form-control" ng-model="avatarName" required />
+            </div>
+            <button type="submit" class="btn btn-default btn-block btn-success">
+                SELECT AVATAR
+            </button>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a class="btn btn-default btn-block btn-warning" ui-sref="mainMenu()">
+        Main Menu
+    </a>
+</div>
+

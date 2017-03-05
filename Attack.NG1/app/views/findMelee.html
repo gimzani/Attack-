@@ -1,0 +1,32 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading text-center">
+        <h3 class="nomargin">Closest Melees</h3>
+    </div>
+    <div class="panel-body">
+
+        <div class="melee-list-container">
+
+            <div class="media melee-list-item" ng-repeat="m in melees">
+
+                <div class="media-left">
+                    <img class="media-object" ng-src="../../content/img/{{m.Book_ID}}/icon.jpg" />
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">Name of Avatar</h4>
+                    <a class="btn btn-default btn-danger pull-right" ng-click="joinMelee(m.Avatar_ID)">Attack!</a>
+
+                   <div>HP: {{m.MaxHP}}</div> 
+                    <div><i>reputation data goes here...</i></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-default btn-block btn-warning" ui-sref="mainMenu()">
+        Main Menu
+    </a>
+</div>

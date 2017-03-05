@@ -1,0 +1,62 @@
+﻿[
+  {
+    "ID": 1,
+    "Type": "Man in Chain",
+    "Name": "Kaladaan",
+    "Experience": 0,
+    "Height": 8,
+    "Level": 1,
+    "MaxHP": 12,
+    "CurHP": 12,
+    "Actions": null,
+    "Restrictions": null
+  },
+  {
+    "ID": 2,
+    "Type": "Skeleton",
+    "Name": "Bob",
+    "Experience": 0,
+    "Height": 8,
+    "Level": 1,
+    "MaxHP": 12,
+    "CurHP": 12,
+    "Actions": null,
+    "Restrictions": null
+  },
+  {
+    "ID": 3,
+    "Type": "Skeleton",
+    "Name": "Boner",
+    "Experience": 0,
+    "Height": 8,
+    "Level": 1,
+    "MaxHP": 12,
+    "CurHP": 12,
+    "Actions": null,
+    "Restrictions": null
+  },
+  {
+    "ID": 4,
+    "Type": "Man in Chain",
+    "Name": "Lothar",
+    "Experience": 0,
+    "Height": 8,
+    "Level": 1,
+    "MaxHP": 12,
+    "CurHP": 12,
+    "Actions": null,
+    "Restrictions": null
+  },
+  {
+    "ID": 5,
+    "Type": "Man in Chain",
+    "Name": "Sam",
+    "Experience": 0,
+    "Height": 8,
+    "Level": 1,
+    "MaxHP": 12,
+    "CurHP": 12,
+    "Actions": null,
+    "Restrictions": null
+  }
+]

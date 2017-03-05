@@ -1,0 +1,340 @@
+{
+	"Player" : {
+		"ID" : 1,
+		"selectedAvatar_ID" : 1,
+		"selectedAvatar" : {
+			"ID" : 1,
+			"Type" : "Man in Chain",
+			"Height" : 8,
+			"CharacterName" : "Bob",
+			"Experience" : 0,
+			"Level" : 1,
+			"MaxHP" : 12,
+			"CurHP" : 12,
+			"Actions" : [{
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 64,
+					"Description" : "Swing High",
+					"Style" : "Extended Range",
+					"Type" : "Black",
+					"IsActive" : true,
+					"ExVal" : 0,
+					"BookOrder" : 26,
+					"Mod" : -6
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 62,
+					"Description" : "Jump Back",
+					"Style" : "Extended Range",
+					"Type" : "Gold",
+					"IsActive" : true,
+					"ExVal" : 0,
+					"BookOrder" : 32,
+					"Mod" : -6
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 60,
+					"Description" : "Thrust Low",
+					"Style" : "Extended Range",
+					"Type" : "White",
+					"IsActive" : true,
+					"ExVal" : 0,
+					"BookOrder" : 29,
+					"Mod" : -5
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 58,
+					"Description" : "Swing Low",
+					"Style" : "Extended Range",
+					"Type" : "Black",
+					"IsActive" : true,
+					"ExVal" : 0,
+					"BookOrder" : 27,
+					"Mod" : -6
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 56,
+					"Description" : "Block and Close",
+					"Style" : "Extended Range",
+					"Type" : "Gold",
+					"IsActive" : true,
+					"ExVal" : 0,
+					"BookOrder" : 30,
+					"Mod" : 0
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 54,
+					"Description" : "Thrust High",
+					"Style" : "Extended Range",
+					"Type" : "White",
+					"IsActive" : true,
+					"ExVal" : 0,
+					"BookOrder" : 28,
+					"Mod" : -5
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 52,
+					"Description" : "Dodge",
+					"Style" : "Extended Range",
+					"Type" : "Gold",
+					"IsActive" : true,
+					"ExVal" : 0,
+					"BookOrder" : 31,
+					"Mod" : -6
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 50,
+					"Description" : "Charge",
+					"Style" : "Extended Range",
+					"Type" : "White",
+					"IsActive" : true,
+					"ExVal" : 0,
+					"BookOrder" : 25,
+					"Mod" : 4
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 48,
+					"Description" : "Side Swing",
+					"Style" : "Protected Attack",
+					"Type" : "Blue",
+					"IsActive" : true,
+					"ExVal" : 56,
+					"BookOrder" : 13,
+					"Mod" : 0
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 46,
+					"Description" : "Draw Weapon",
+					"Style" : "Special",
+					"Type" : "Green",
+					"IsActive" : true,
+					"ExVal" : 52,
+					"BookOrder" : 18,
+					"Mod" : -4
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 44,
+					"Description" : "Down Swing",
+					"Style" : "Protected Attack",
+					"Type" : "Orange",
+					"IsActive" : true,
+					"ExVal" : 56,
+					"BookOrder" : 12,
+					"Mod" : 2
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 42,
+					"Description" : "High",
+					"Style" : "Feint",
+					"Type" : "Red",
+					"IsActive" : true,
+					"ExVal" : 58,
+					"BookOrder" : 8,
+					"Mod" : -1
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 40,
+					"Description" : "Wild Swing",
+					"Style" : "Special",
+					"Type" : "Yellow",
+					"IsActive" : true,
+					"ExVal" : 58,
+					"BookOrder" : 16,
+					"Mod" : 2
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 38,
+					"Description" : "Thrust",
+					"Style" : "Feint",
+					"Type" : "Red",
+					"IsActive" : true,
+					"ExVal" : 58,
+					"BookOrder" : 11,
+					"Mod" : 0
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 36,
+					"Description" : "Heavy",
+					"Style" : "Down Swing",
+					"Type" : "Orange",
+					"IsActive" : false,
+					"ExVal" : 50,
+					"BookOrder" : 1,
+					"Mod" : 5
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 34,
+					"Description" : "Kick",
+					"Style" : "Special",
+					"Type" : "Blue",
+					"IsActive" : true,
+					"ExVal" : 56,
+					"BookOrder" : 15,
+					"Mod" : 0
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 32,
+					"Description" : "Thrust",
+					"Style" : "Thrust",
+					"Type" : "Red",
+					"IsActive" : true,
+					"ExVal" : 54,
+					"BookOrder" : 6,
+					"Mod" : -1
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 30,
+					"Description" : "Disarm",
+					"Style" : "Special",
+					"Type" : "Blue",
+					"IsActive" : true,
+					"ExVal" : 58,
+					"BookOrder" : 17,
+					"Mod" : -4
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 28,
+					"Description" : "Strong",
+					"Style" : "Side Swing",
+					"Type" : "Orange",
+					"IsActive" : true,
+					"ExVal" : 64,
+					"BookOrder" : 3,
+					"Mod" : 3
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 26,
+					"Description" : "High",
+					"Style" : "Shield Block",
+					"Type" : "Green",
+					"IsActive" : true,
+					"ExVal" : 56,
+					"BookOrder" : 19,
+					"Mod" : 1
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 24,
+					"Description" : "Smash",
+					"Style" : "Down Swing",
+					"Type" : "Orange",
+					"IsActive" : true,
+					"ExVal" : 50,
+					"BookOrder" : 2,
+					"Mod" : 4
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 22,
+					"Description" : "Side Swing",
+					"Style" : "Feint",
+					"Type" : "Blue",
+					"IsActive" : true,
+					"ExVal" : 54,
+					"BookOrder" : 10,
+					"Mod" : -2
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 20,
+					"Description" : "Duck",
+					"Style" : "Dodge",
+					"Type" : "Green",
+					"IsActive" : true,
+					"ExVal" : 52,
+					"BookOrder" : 23,
+					"Mod" : -5
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 18,
+					"Description" : "Jump",
+					"Style" : "Dodge",
+					"Type" : "Green",
+					"IsActive" : true,
+					"ExVal" : 52,
+					"BookOrder" : 21,
+					"Mod" : -6
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 16,
+					"Description" : "Away",
+					"Style" : "Dodge",
+					"Type" : "Yellow",
+					"IsActive" : true,
+					"ExVal" : 62,
+					"BookOrder" : 24,
+					"Mod" : -4
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 14,
+					"Description" : "Low",
+					"Style" : "Thrust",
+					"Type" : "Blue",
+					"IsActive" : true,
+					"ExVal" : 60,
+					"BookOrder" : 7,
+					"Mod" : -1
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 12,
+					"Description" : "Low",
+					"Style" : "Feint",
+					"Type" : "Blue",
+					"IsActive" : true,
+					"ExVal" : 64,
+					"BookOrder" : 9,
+					"Mod" : -1
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 10,
+					"Description" : "High",
+					"Style" : "Side Swing",
+					"Type" : "Red",
+					"IsActive" : true,
+					"ExVal" : 64,
+					"BookOrder" : 4,
+					"Mod" : 1
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 8,
+					"Description" : "Side",
+					"Style" : "Dodge",
+					"Type" : "Yellow",
+					"IsActive" : true,
+					"ExVal" : 52,
+					"BookOrder" : 22,
+					"Mod" : -4
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 6,
+					"Description" : "Thrust",
+					"Style" : "Protected Attack",
+					"Type" : "Red",
+					"IsActive" : true,
+					"ExVal" : 56,
+					"BookOrder" : 14,
+					"Mod" : -2
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 4,
+					"Description" : "Low",
+					"Style" : "Shield Block",
+					"Type" : "Green",
+					"IsActive" : true,
+					"ExVal" : 56,
+					"BookOrder" : 20,
+					"Mod" : 1
+				}, {
+					"Book_ID" : 1,
+					"ActionNumber_ID" : 2,
+					"Description" : "Low",
+					"Style" : "Side Swing",
+					"Type" : "Blue",
+					"IsActive" : true,
+					"ExVal" : 58,
+					"BookOrder" : 5,
+					"Mod" : 1
+				}
+			],
+			"Restrictions" : ["Extended Range"]
+		}
+	},
+	"Avatars" : []
+}

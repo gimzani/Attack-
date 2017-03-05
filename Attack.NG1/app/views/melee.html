@@ -1,0 +1,33 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading text-center">
+        <h3 class="nomargin">{{currentEnemy.Name}}</h3>
+    </div>
+    <div class="panel-body">
+        <div class="avatar-view">
+            <img ng-src="content/img/{{currentEnemy.Book_ID}}/{{currentEnemy.State}}.jpg" />
+        </div>
+        <div class="avatar-stats">
+            <div class="row">
+                <div class="col-xs-6 text-right">
+                    HP:{{currentEnemy.CurHP}}/{{currentEnemy.MaxHP}}
+                </div>
+                <div class="col-xs-6 text-left">
+                    Height:{{currentEnemy.Height}}
+                </div>
+            </div>
+        </div>
+        <div class="center-block-300 attack-buttons" style="margin-top:10px;margin-bottom:20px;">
+            <div>
+                <div class="text-center" style="width:33%;float:left" ng-repeat="a in availableAttacks">
+                    <a class="btn btn-xs btn-block btn-default" ng-class="a.Type">{{a.Description}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-default btn-block btn-warning" ui-sref="mainMenu()">
+        Main Menu
+    </a>
+</div>
