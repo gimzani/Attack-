@@ -5,11 +5,11 @@ session_start();
 
 include 'acn.php';
 
-$m = $_GET["m"];
-$c = $_GET["c"];
-$r = $_GET["r"];
-$a = $_GET["a"];
-$t = $_GET["t"];
+$m = $_GET["m"]; //Melee_ID
+$c = $_GET["c"]; //Attacker
+$r = $_GET["r"]; //avatarRnd
+$a = $_GET["a"]; //attackVal
+$t = $_GET["t"]; //target
 
 $query = "SELECT MA.*
 				, M.meleeRnd 
@@ -25,16 +25,26 @@ while($row = mysqli_fetch_assoc($attacker)) {
 	
 	if($r==$row["meleeRnd"] && $a != $row["atkVal"])
 	{	
-		echo "set atk";
-		$query = "UPDATE MeleeAvatars SET atkVal = $a, target = $t, IsChosen = 1 WHERE M.Melee_ID = $m AND Attacker =$c AND avatarRnd = $r;";
-		mysqli_query($cxn,$query);
-		$query = "UPDATE MeleeAvatars SET targetVal = $a WHERE M.Melee_ID = $m AND target =$c AND avatarRnd = $r;";
-		mysqli_query($cxn,$query);
+		$query = "UPDATE MeleeAvatars SET atkVal = $a, target = $t, IsChosen = 1 WHERE Melee_ID = $m AND Attacker =$c AND avatarRnd = $r;";
+	
+		mysqli_query($cxn,$query) or die(mysqli_error($cxn));
+		$query = "UPDATE MeleeAvatars SET targetVal = $a WHERE Melee_ID = $m AND target =$c AND avatarRnd = $r;";
+
+		mysqli_query($cxn,$query) or die(mysqli_error($cxn));
+		print 0;
 	}
 	else if($r==$row["meleeRnd"] && $row["RndComplete"]==0)
 	{	
+		$query = "UPDATE MeleeAvatars AS MA1
+						INNER JOIN MeleeAvatars AS MA2 ON MA1.Melee_ID = MA2.Melee_ID AND MA1.avatarRnd = MA2.avatarRnd AND MA1.target = MA2.Attacker
+						SET MA1.targetVal = MA2.atkVal
+						WHERE MA1.Melee_ID = $m AND MA1.avatarRnd = $r;";
+		//echo $query;
+		
+		mysqli_query($cxn,$query) or die(mysqli_error($cxn));
+		
 		$query = "UPDATE Melee SET meleeRnd = meleeRnd+1 WHERE Melee_ID = $m;";
-		mysqli_query($cxn,$query);
+		mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 		$query = "INSERT INTO MeleeAvatars (Melee_ID, Attacker, avatarRnd) SELECT MA.Melee_ID, MA.Attacker, M.meleeRnd
 						FROM MeleeAvatars AS MA
 						INNER JOIN Melee AS M ON MA.Melee_ID = M.Melee_ID
@@ -43,18 +53,20 @@ while($row = mysqli_fetch_assoc($attacker)) {
 
 		mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 		
-		returnResults($cxn, $r);
+		returnResults($cxn, $m, $r);
 	}
 	else if($r!=$row["meleeRnd"])
 	{	
-		returnResults($cxn, $r);
+		returnResults($cxn, $m, $r);
 	}
 }
 
-function returnResults($cxn, $r) {
+function returnResults($cxn, $m, $r) {
 		$query = "SELECT MA.*, M.meleeRnd FROM MeleeAvatars AS MA
 						INNER JOIN Melee AS M ON MA.Melee_ID = M.Melee_ID
 						WHERE M.Melee_ID = $m AND avatarRnd = $r;";
+						//echo $query;
+						
 		$out = mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 		
 		$rows = array();

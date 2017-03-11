@@ -10,6 +10,10 @@ $r = $_GET["r"];
 $a = $_GET["a"];
 $t = $_GET["t"];
 
+$query = "UPDATE MeleeAvatars SET target = 0;";
+$run=mysqli_query($cxn,$query) or die(mysqli_error($cxn));
+
+
 $query = "DELETE FROM MeleeAvatars WHERE avatarRnd != 1;";
 $run=mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 
