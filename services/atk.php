@@ -28,9 +28,8 @@ while($row = mysqli_fetch_assoc($attacker)) {
 		$query = "UPDATE MeleeAvatars SET atkVal = $a, target = $t, IsChosen = 1 WHERE Melee_ID = $m AND Attacker =$c AND avatarRnd = $r;";
 	
 		mysqli_query($cxn,$query) or die(mysqli_error($cxn));
-		$query = "UPDATE MeleeAvatars SET targetVal = $a WHERE Melee_ID = $m AND target =$c AND avatarRnd = $r;";
-
-		mysqli_query($cxn,$query) or die(mysqli_error($cxn));
+		//$query = "UPDATE MeleeAvatars SET targetVal = $a WHERE Melee_ID = $m AND target =$c AND avatarRnd = $r;";
+		//mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 		print 0;
 	}
 	else if($r==$row["meleeRnd"] && $row["RndComplete"]==0)
