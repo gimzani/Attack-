@@ -5,13 +5,14 @@ session_start();
 
 include 'acn.php';
 
-$p = $_GET["p"];
+$t = $_GET["t"];
 $lat = $_GET["lat"];
 $long = $_GET["long"];
 
-$query = "SELECT Book_ID, MaxHP, Avatar_ID
-				FROM Avatar
-				WHERE Player_ID != $p
+$query = "SELECT Class_ID, MaxHP, Avatar_ID
+				FROM Avatar AS A
+				INNER JOIN Player AS P ON A.Player_ID = P.Player_ID
+				WHERE TeamName != $t
 				LIMIT 10;";
 
 //echo $query;
