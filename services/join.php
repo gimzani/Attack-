@@ -67,7 +67,7 @@ if($mid==null) {
 }
 
 function returnResults($cxn, $mid) {
-		$query = "SELECT MA.*, M.meleeRnd, P.Team
+		$query = "SELECT MA.*, M.meleeRnd, P.TeamName
 						FROM MeleeAvatars AS MA
 						INNER JOIN Avatar AS A ON MA.Avatar_ID = A.Avatar_ID
 						INNER JOIN Player AS P ON A.Player_ID = P.Player_ID
