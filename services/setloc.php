@@ -1,13 +1,17 @@
 <?php
 header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
 
 session_start();
 
 include 'acn.php';
 
-$p = $_GET["p"];
-$lat = $_GET["lat"];
-$lng = $_GET["lng"];
+$data = json_decode(file_get_contents("php://input"), true);
+
+$p = $data["p"]; // playerid
+$lat = $data["lat"];//latitude
+$lng = $data["lng"];//longitude
 
 $query = "UPDATE Player
 				SET Latitude = $lat, Longitude = $lng

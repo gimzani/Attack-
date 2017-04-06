@@ -1,11 +1,15 @@
 <?php
 header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
 
 session_start();
 
 include 'acn.php';
 
-$v = $_GET["v"];
+$data = json_decode(file_get_contents("php://input"), true);
+
+$v = $data["v"]; // version
 
 $rows = array();
 

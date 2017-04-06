@@ -1,13 +1,16 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-
+header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
 session_start();
 
 include 'acn.php';
 
-$a = $_GET["a"]; //avatar
-$t = $_GET["t"]; //target
-$atk = $_GET["atk"]; //attack choice
+$data = json_decode(file_get_contents("php://input"), true);
+
+$a = $data["a"]; //avatar
+$t = $data["tgt"]; //target
+$atk = $data["atk"]; //attack choice
 
 $query = "SELECT M.Melee_ID FROM Melee AS M
 				INNER JOIN MeleeAvatars AS MA ON M.Melee_ID = MA.Melee_ID
@@ -26,7 +29,7 @@ if($row["Melee_ID"]!=null) {
 
 $query = "SELECT M.Melee_ID FROM Melee AS M
 				INNER JOIN MeleeAvatars AS MA ON M.Melee_ID = MA.Melee_ID
-				WHERE Attacker = $t AND M.meleeRnd > 0;";
+				WHERE Attacker = $tgt AND M.meleeRnd > 0;";
 
 $target = mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 $row = mysqli_fetch_assoc($target);
@@ -42,7 +45,7 @@ if($mid==null) {
 	$mid = mysqli_insert_id($cxn);
 
 	$query = "INSERT INTO MeleeAvatars (Melee_ID, avatarRnd, Attacker, target, atkVal, IsChosen)
-					SELECT $mid, 1, $a, $t, $atk, 1;";
+					SELECT $mid, 1, $a, $tgt, $atk, 1;";
 
 	//echo $query;
 
@@ -52,11 +55,11 @@ if($mid==null) {
 } else {
 
 	$query = "INSERT INTO MeleeAvatars (Melee_ID, avatarRnd, Attacker, target, atkVal, IsChosen)
-				SELECT MA.Melee_ID, MA.avatarRnd, $a, $t, $atk, 1
+				SELECT MA.Melee_ID, MA.avatarRnd, $a, $tgt, $atk, 1
 				FROM MeleeAvatars AS MA
 				INNER JOIN Melee AS M ON MA.Melee_ID = M.Melee_ID AND MA.avatarRnd = M.meleeRnd
 				WHERE MA.Melee_ID = $mid
-				AND MA.Attacker = $t;";
+				AND MA.Attacker = $tgt;";
 
 	//echo $query;
 

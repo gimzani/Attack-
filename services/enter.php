@@ -1,12 +1,16 @@
 <?php
 header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
 
 session_start();
 
 include 'acn.php';
 
-$p = $_GET["p"];
-$a = $_GET["a"];
+$data = json_decode(file_get_contents("php://input"), true);
+
+$p = $data["p"]; //player
+$a = $data["a"]; //avatar
 
 $query = "UPDATE Avatar
 				SET IsActive = CASE WHEN Avatar_ID = $a THEN 1 ELSE 0 END

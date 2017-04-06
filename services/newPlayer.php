@@ -1,15 +1,19 @@
 <?php
 header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
 
 session_start();
 
 include 'acn.php';
 
-$pn = $_GET["pn"];
-$n = $_GET["n"];
-$e = $_GET["e"];
-$lt = $_GET["lt"];
-$lg = $_GET["lg"];
+$data = json_decode(file_get_contents("php://input"), true);
+
+$pn = $data["pn"]; //player name
+$n = $data["n"]; //nick name
+$e = $data["e"]; //email
+$lat = $data["lat"]; //latitude
+$lng = $data["lng"]; //longitude
 
 $tn = rand_color($cxn);
 
@@ -18,8 +22,8 @@ $query = "INSERT INTO Player (email, PlayerName, TeamName, Nick, Latitude, Longi
 				, '$pn'
 				, '$tn'
 				, '$n'
-				, $lt
-				, $lg;";
+				, $lat
+				, $lng;";
 				
 $rs = mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 
