@@ -17,13 +17,19 @@ $lng = $data["lng"]; //longitude
 
 $tn = rand_color($cxn);
 
+$baseLat = 39.738026;
+$baseLng = -86.031102;
+
+$myLat = $baseLat - 0.05 + mt_rand() / mt_getrandmax() / 10;
+$myLng = $baseLng - 0.05 + mt_rand() / mt_getrandmax() / 10;
+
 $query = "INSERT INTO Player (email, PlayerName, TeamName, Nick, Latitude, Longitude)
 				SELECT '$e'
 				, '$pn'
 				, '$tn'
 				, '$n'
-				, $lat
-				, $lng;";
+				, $myLat
+				, $myLng;";
 				
 $rs = mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 

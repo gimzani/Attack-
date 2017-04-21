@@ -21,7 +21,7 @@ $t = $data["t"];
 $query = "DELETE FROM MeleeAvatars;";
 $run=mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 
-$query = "DELETE FROM Avatar WHERE Avatar_ID > 2;";
+$query = "DELETE FROM Avatar;";
 $run=mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 
 //$query = "UPDATE MeleeAvatars SET AtkVal = null, targetVal = null, IsChosen = null;";
@@ -33,14 +33,13 @@ $run=mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 //$query = "UPDATE Melee SET meleeRnd = 1;";
 //$run=mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 
-$query = "DELETE FROM Player WHERE Player_ID > 2;";
+$query = "DELETE FROM Player;";
 $run=mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 
-$query = "UPDATE Player SET TeamName = 'Wheat' WHERE Player_ID = 1;";
+$query = "ALTER TABLE Avatar AUTO_INCREMENT = 1;";
 $run=mysqli_query($cxn,$query) or die(mysqli_error($cxn));
-$query = "UPDATE Player SET TeamName = 'Violet' WHERE Player_ID = 2;";
+$query = "ALTER TABLE Player AUTO_INCREMENT = 1;";
 $run=mysqli_query($cxn,$query) or die(mysqli_error($cxn));
-
 print 0;
 
 ?>

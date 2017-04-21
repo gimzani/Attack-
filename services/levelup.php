@@ -9,30 +9,27 @@ include 'acn.php';
 
 $data = json_decode(file_get_contents("php://input"), true);
 
-$p = $data["p"]; //Player ID
 $a = $data["a"]; //avatar
-$t = $data["t"]; //team
-$c = $data["c"]; //Coin
-$exp = $data["exp"]; //experience
-$hp = $data["hp"]; //current Hit Points
-$wl = $data["wl"]; //W/L/T
+$atk = $data["atk"]; //Attack
+$hp =  $data["hp"]; //New MaxHP
 
-$win = ($wl != 'l' ? 1 : 0);
-$loss = ($wl != 'w' ? 1 : 0);
-
-$query = "UPDATE Player
-			SET TeamName = '$t'
-			, Coin = Coin + $c
-			, Win = Win + $win
-			, Loss = Loss + $loss
-		WHERE Player_ID = $p;";
+$query = "UPDATE Avatar
+			SET Level = Level +1
+			, Exp = Exp - MaxHP
+		WHERE Avatar_ID = $a;";
 				
 mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 
 $query = "UPDATE Avatar
-			SET Exp = Exp + $exp
-			, CurHP = $hp
+			SET MaxHP = $hp
 		WHERE Avatar_ID = $a;";
+				
+mysqli_query($cxn,$query) or die(mysqli_error($cxn));
+
+$query = "INSERT INTO AvatarMod (Avatar_ID, ActionNumber_ID, DmgMod)
+			VALUES ($a, $atk, 1)
+			ON DUPLICATE KEY UPDATE
+			DmgMod = DmgMod + 1;";
 
 mysqli_query($cxn,$query) or die(mysqli_error($cxn));
 

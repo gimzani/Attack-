@@ -97,8 +97,20 @@ function returnResults($cxn, $m, $r) {
 		$rows = array();
 		
 		while($row = mysqli_fetch_assoc($out)) {
-			$rows[] = $row;
+			$rows['Melee'][] = $row;
 		}
+
+		$query = "SELECT M.Avatar_ID, M.ActionNumber_ID, M.DmgMod
+					FROM AvatarMod AS M
+					INNER JOIN MeleeAvatars AS MA ON M.Avatar_ID = MA.Avatar_ID
+						WHERE M.Melee_ID = $m AND avatarRnd = $r;";
+
+		$out = mysqli_query($cxn,$query) or die(mysqli_error($cxn));
+		
+		while($row = mysqli_fetch_assoc($out)) {
+			$rows['AvatarMod'][] = $row;
+		}
+		
 		print json_encode($rows);
 }
 
